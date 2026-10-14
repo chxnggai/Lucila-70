@@ -1,0 +1,360 @@
+/* Lucila's 70th — Vintage Retro Diner | mobile-first */
+:root {
+  --mint: #A7C1B0;
+  --pink: #F9B1B5;
+  --cream: #FFF4E8;
+  --cream-deep: #FBEEDC;
+  --teal: #347B6A;
+  --teal-dark: #265a4e;
+  --retro-red: #D94F6A;
+  --ink: #3a2d28;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--cream);
+}
+
+body {
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { margin: 0; padding: 0; }
+
+/* ——— Full-bleed artwork panels: zero gap, no distortion ——— */
+.hero, .panel-full {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background: var(--cream);
+}
+
+.hero img, .panel-full img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ——— Panel 2 ——— */
+.panel2 {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  line-height: normal;
+}
+
+.panel2-inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 20px 14px 26px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Details artwork — display entire image, preserve proportions */
+.details { line-height: 0; }
+
+.details-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.checker {
+  height: 18px;
+  background-image:
+    linear-gradient(45deg, var(--teal) 25%, transparent 25%, transparent 75%, var(--teal) 75%),
+    linear-gradient(45deg, var(--teal) 25%, transparent 25%, transparent 75%, var(--teal) 75%);
+  background-size: 18px 18px;
+  background-position: 0 0, 9px 9px;
+  background-color: #fff;
+}
+.checker-bottom {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background-image:
+    linear-gradient(45deg, var(--retro-red) 25%, transparent 25%, transparent 75%, var(--retro-red) 75%),
+    linear-gradient(45deg, var(--retro-red) 25%, transparent 25%, transparent 75%, var(--retro-red) 75%);
+}
+
+.details-eyebrow {
+  font-family: "Pacifico", cursive;
+  color: var(--teal);
+  font-size: 1.25rem;
+  margin: 20px 0 2px;
+}
+
+.details-title {
+  font-family: "Bowlby One SC", "Playfair Display", sans-serif;
+  font-weight: 400;
+  color: var(--retro-red);
+  font-size: clamp(1.7rem, 6vw, 2.4rem);
+  line-height: 1.05;
+  margin: 0 12px;
+  text-shadow: 2px 2px 0 var(--teal);
+}
+.details-title span { color: var(--teal); text-shadow: 2px 2px 0 var(--pink); }
+
+.details-divider { color: #e89a90; font-size: 1.2rem; margin: 8px 0 4px; }
+
+.details-list { margin: 0; padding: 0 18px; }
+.details-list > div { padding: 9px 0; border-top: 2px dashed rgba(52,123,106,.3); }
+.details-list dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 700;
+}
+.details-list dd { margin: 3px 0 0; font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.05rem; }
+.details-list small { font-family: "DM Sans", sans-serif; font-weight: 500; font-size: 0.82rem; color: #6b5a52; }
+.details-note {
+  font-family: "Lobster", cursive;
+  color: var(--retro-red);
+  margin: 12px 16px 22px;
+  font-size: 1.02rem;
+}
+
+/* Countdown inside supplied frame */
+.countdown-frame-wrap { position: relative; line-height: 0; }
+.frame-img { display: block; width: 100%; height: auto; }
+.countdown-overlay {
+  position: absolute;
+  top: 30%;
+  left: 4%;
+  right: 4%;
+  bottom: 6%;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.time-card {
+  border-radius: 16px;
+  padding: 10px 4px 8px;
+  text-align: center;
+  border: 2px solid rgba(58, 45, 40, 0.85);
+  box-shadow: 3px 3px 0 rgba(58, 45, 40, 0.85);
+}
+.time-card.pink { background: var(--pink); }
+.time-card.mint { background: var(--mint); }
+
+.time-card .num {
+  display: block;
+  font-family: "Bowlby One SC", sans-serif;
+  font-size: clamp(1.4rem, 7vw, 2.4rem);
+  line-height: 1;
+  color: #2f2a26;
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+}
+.time-card .label {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2f2a26;
+}
+
+.countdown-done {
+  font-family: "Pacifico", cursive;
+  color: var(--teal-dark);
+  background: #fff;
+  border: 2px solid var(--teal);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 1.15rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Map */
+.map-wrap { position: relative; line-height: 0; }
+.map-wrap img { display: block; width: 100%; height: auto; }
+
+.map-button {
+  position: absolute;
+  /* Centered over the satellite-map area (left ~37% of the full artwork).
+     Tuned so it sits on the map, clear of the "Pinobre Park" pin and the car. */
+  left: 37%;
+  bottom: 29%;
+  transform: translateX(-50%);
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--retro-red);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 12px 18px;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(217, 79, 106, 0.45);
+  white-space: nowrap;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.map-button span { font-size: 1.2em; line-height: 1; }
+.map-button:hover { background: #c2435c; transform: translateX(-50%) scale(1.04); box-shadow: 0 6px 16px rgba(217,79,106,.55); }
+.map-button:active { transform: translateX(-50%) scale(0.98); }
+.map-button:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+/* Sunset */
+.sunset-block { line-height: 0; }
+.sunset-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  background: var(--cream);
+  text-align: center;
+  padding: 30px 20px 42px;
+  border-top: 3px dashed rgba(52, 123, 106, 0.25);
+}
+.footer-sparkles { font-size: 1.3rem; letter-spacing: 0.4em; margin-bottom: 8px; }
+.footer-sparkles .s1, .footer-sparkles .s4 { color: var(--mint); }
+.footer-sparkles .s2, .footer-sparkles .s3 { color: var(--pink); }
+.footer-sparkles .ball { font-size: 1.6rem; vertical-align: middle; animation: bob 3s ease-in-out infinite; display: inline-block; }
+.footer-sparkles .spark { display: inline-block; animation: twinkle 2.4s ease-in-out infinite; }
+.footer-sparkles .s2, .footer-sparkles .s4 { animation-delay: 1.2s; }
+
+.footer-main {
+  font-family: "Pacifico", cursive;
+  color: var(--teal-dark);
+  font-size: clamp(1.25rem, 5vw, 1.8rem);
+  margin: 6px 0;
+}
+.footer-sub {
+  font-family: "DM Sans", sans-serif;
+  font-style: italic;
+  color: #8a766c;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@keyframes twinkle { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.85); } }
+@keyframes bob { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-4px) rotate(6deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-sparkles .spark, .footer-sparkles .ball { animation: none; }
+  .map-button { transition: none; }
+}
+
+/* ——— Tablet: 481–768px ——— */
+@media (min-width: 481px) {
+  .panel2-inner { padding: 26px 22px 32px; gap: 20px; }
+  .countdown { gap: 12px; }
+  .time-card { padding: 14px 6px 10px; }
+  .map-button { font-size: 1rem; padding: 13px 22px; }
+}
+
+/* ——— Desktop: above 768px — collage like the mockup ——— */
+@media (min-width: 769px) {
+  .panel2-inner {
+    grid-template-columns: 1.02fr 1.28fr 0.95fr;
+    grid-template-areas:
+      "details countdown sunset"
+      "details map sunset";
+    gap: 22px;
+    align-items: center;
+    padding: 30px 28px 36px;
+  }
+  .details { grid-area: details; }
+  .countdown-block { grid-area: countdown; }
+  .map-block { grid-area: map; }
+  .sunset-block { grid-area: sunset; }
+  .countdown-overlay { top: 32%; }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+  .countdown { gap: 6px; }
+  .time-card { border-radius: 12px; }
+  .map-button { font-size: 0.8rem; padding: 10px 14px; left: 37%; bottom: 28%; }
+}
+
+/* ——— Floating vintage music (jukebox) toggle ——— */
+.music-toggle {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 16px 8px 8px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--retro-red);
+  border: 2px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(217, 79, 106, 0.5);
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.music-toggle:hover { background: #c2435c; transform: scale(1.04); }
+.music-toggle:active { transform: scale(0.97); }
+.music-toggle:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+/* Mini vinyl disc */
+.music-toggle .disc {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex: 0 0 32px;
+  background:
+    radial-gradient(circle at center, var(--pink) 0 5px, #fff 5px 6px, transparent 6px),
+    repeating-radial-gradient(circle at center, #2b2b2e 0 2px, #45454b 2px 3px);
+  border: 2px solid #fff;
+}
+.music-toggle .disc-label {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--mint);
+  border: 1px solid #fff;
+}
+
+/* Spin while playing */
+.music-toggle.playing .disc { animation: vinyl-spin 1.6s linear infinite; }
+.music-toggle.playing { background: var(--teal); box-shadow: 0 4px 14px rgba(52, 123, 106, 0.5); }
+.music-toggle.playing:hover { background: var(--teal-dark); }
+
+@keyframes vinyl-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle.playing .disc { animation: none; }
+  .music-toggle { transition: none; }
+}

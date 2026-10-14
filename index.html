@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucila's 70th Birthday Celebration — You're Invited!</title>
+  <meta name="description" content="Join us to celebrate Lucila's fabulous 70th birthday — October 23, 2026 at Pinobre Park. Vintage retro diner party!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Lobster&family=Pacifico&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+
+    <!-- PANEL 1 — Hero -->
+    <section class="hero" aria-label="Lucila's 70th birthday hero invitation">
+      <img src="Assets/hero image.png" alt="You're invited! Let's celebrate Lucila's 70th Birthday — vintage diner artwork with celebrant portrait, milkshake, vinyl records and classic car" fetchpriority="high" />
+    </section>
+
+    <!-- PANEL 2 — Details, Countdown, Map, Sunset -->
+    <section class="panel2" aria-label="Party details, countdown, map and sunset">
+      <div class="panel2-inner">
+
+        <!-- A. Birthday Details artwork -->
+        <div class="details">
+          <img class="details-img" src="Assets/Details.png" alt="Party details — Friday, October 23, 2026 at Pinobre Park, Brgy. Kawas, Alabel, Sarangani Province" loading="lazy" />
+        </div>
+
+        <!-- B. Countdown -->
+        <div class="countdown-block">
+          <div class="countdown-frame-wrap">
+            <img class="frame-img" src="Assets/countdown frame.png" alt="" aria-hidden="true" />
+            <div class="countdown-overlay">
+              <div class="countdown" id="countdown" role="timer" aria-live="polite" aria-label="Countdown to Lucila's 70th birthday">
+                <div class="time-card pink">
+                  <span class="num" id="cd-days">00</span>
+                  <span class="label">Days</span>
+                </div>
+                <div class="time-card mint">
+                  <span class="num" id="cd-hours">00</span>
+                  <span class="label">Hours</span>
+                </div>
+                <div class="time-card pink">
+                  <span class="num" id="cd-mins">00</span>
+                  <span class="label">Mins</span>
+                </div>
+                <div class="time-card mint">
+                  <span class="num" id="cd-secs">00</span>
+                  <span class="label">Secs</span>
+                </div>
+              </div>
+              <p class="countdown-done" id="countdown-done" hidden>🎉 It's party time! See you on the 23rd! 🎉</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- C. Map Link -->
+        <div class="map-block">
+          <div class="map-wrap">
+            <img src="Assets/map artwork.png" alt="Satellite map showing Pinobre Park venue with vintage pink classic car" loading="lazy" />
+            <a href="https://maps.app.goo.gl/V1YEx5unrYpK3XFB8" target="_blank" rel="noopener noreferrer" class="map-button">
+              Open in Google Maps <span aria-hidden="true">›</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- D. Sunset -->
+        <div class="sunset-block">
+          <img src="Assets/Sunset.png" alt="Sunset over the sea viewed from the venue — join us for a stroll, sunset and celebration together" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PANEL 3 — Dress code -->
+    <section class="panel-full" aria-label="Vintage retro dress code and best attire">
+      <img src="Assets/3rd Panel.png" alt="Vintage retro attire — come in your best vintage or retro look, prizes await for the best attire" loading="lazy" />
+    </section>
+
+    <!-- PANEL 4 — Program -->
+    <section class="panel-full" aria-label="Celebrant portrait and birthday program">
+      <img src="Assets/4th panel.png" alt="See you on the 23rd — birthday program from guest arrival at 4:30pm to post-dinner celebration at 7:30pm" loading="lazy" />
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" aria-label="Thank you footer">
+      <div class="footer-sparkles" aria-hidden="true">
+        <span class="spark s1">✦</span>
+        <span class="spark s2">✧</span>
+        <span class="ball">🪩</span>
+        <span class="spark s3">✧</span>
+        <span class="spark s4">✦</span>
+      </div>
+      <p class="footer-main">Thanks for being part of Lucila's fabulous 70th!</p>
+      <p class="footer-sub">Good vibes, sweet memories, and a little retro magic.</p>
+    </footer>
+
+  </main>
+
+  <!-- Vintage background music — retro disco party track -->
+  <audio id="bg-music" loop preload="none">
+    <source src="Assets/atlasaudio-disco-party-617561.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false" aria-label="Play vintage party music">
+    <span class="disc" aria-hidden="true"><span class="disc-label"></span></span>
+    <span class="music-text">Play music</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
